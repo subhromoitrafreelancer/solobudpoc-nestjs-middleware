@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
-import * as helmet from 'helmet';
+import helmet from 'helmet';
 import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 
@@ -19,7 +19,7 @@ async function bootstrap() {
   );
   
   // Security headers
-  //app.use(helmet());
+  app.use(helmet());
   
   // Enable CORS
   app.enableCors();
